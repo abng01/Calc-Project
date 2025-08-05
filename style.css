@@ -1,0 +1,76 @@
+ html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden; /* Optional: Prevents unwanted scrollbars if content overflows */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}   
+
+#container {
+    height: 90vh;
+    width: 90vh;
+    border: 1px solid black;
+    display: grid;
+    grid-template-rows: 20% 1fr auto;
+}
+
+#output {
+    margin: 15px;
+    padding-right: 2em;
+    height: auto;
+    width: auto;
+    border: 1px solid black;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+p {
+    font-size: 80px;
+}
+
+#buttons {
+    margin: 15px;
+    padding: 15px;
+    display: flex;
+}
+
+button {
+    font-weight: bolder;
+    font-size: 3em;
+}
+
+#buttons {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+.column {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 2.5em;
+    height: 100%;
+    justify-items: center;
+}
+
+.operators {
+    width: 80%;
+}
+
+.rows {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 2.5em;
+    justify-items: center;
+    margin: 0 5px 0 5px;
+}
+
+.row-buttons {
+    width: 90%;
+    /* color: white;
+    background-color: rgb(85, 111, 99); */
+}
