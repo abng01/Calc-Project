@@ -1,52 +1,71 @@
 let firstValueArray = []
 let secondValueArray = []
+let operator
 
-function firstValue(value) {
+function getValueFromId(id) {
+    let number = document.getElementById(`${id}`).innerHTML
+    if (operator) {
+        secondValueDisplay(number)
+    } else {
+        firstValueDisplay(number)
+    }
+}
+
+function firstValueDisplay(value) {
     firstValueArray.push(value)
     let firstValue = firstValueArray.join('')
-    return firstValue
+    document.getElementById('result').innerHTML = firstValue
 }
 
-console.log(firstValue(4))
-console.log(firstValue(8))
-console.log(firstValue(4))
-console.log(firstValue(8))
-
-function secondValue(value) {
+function secondValueDisplay(value) {
     secondValueArray.push(value)
     let secondValue = secondValueArray.join('')
-    return secondValue
+    document.getElementById('result').innerHTML = secondValue
 }
 
-console.log(secondValue(4))
-console.log(secondValue(8))
-console.log(secondValue(4))
-console.log(secondValue(8))
+function getOperator(id) {
+    let operatorHTML = document.getElementById(`${id}`).innerHTML
+    operator = operatorHTML
+    document.getElementById('result').innerHTML = operator
+}
 
-function calculate(firstValue, secondValue, operator) {
+function calculate() {
+    let firstValue = Number(firstValueArray.join(''))
+    console.log(firstValue)
+    let secondValue = Number(secondValueArray.join(''))
+    console.log(secondValue)     
     let result
+
     switch (operator) {
         case '+':
             result = firstValue + secondValue
-            return result
+            showCalculation(result)
+            break;
         case '-':
             result = firstValue - secondValue
-            return result
-        case '*':
+            showCalculation(result)
+            break;
+        case 'x':
             result = firstValue * secondValue
-            return result
-        case '/':
+            showCalculation(result)
+            break;
+        case '÷':
             result = firstValue / secondValue
-            return result
+            showCalculation(result)
+            break;
         default:
             break;
     }
 }
 
-console.log(calculate(12, 3, '+'))
-console.log(calculate(12, 3, '-'))
-console.log(calculate(12, 3, '*'))
-console.log(calculate(12, 3, '/'))
+function showCalculation(output) {
+    document.getElementById('result').innerHTML = output
+    console.log(output)
+}
 
-let number = document.getElementById('one').innerHTML
-console.log(number)
+function reset() {
+    firstValueArray = []
+    secondValueArray = []
+    operator = null
+    document.getElementById('result').innerHTML = 0
+}

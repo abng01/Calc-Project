@@ -5,36 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Calculator</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 <body>
     <div id="container">
         <div id="output">
-            <p id="result">1</p>
+            <p id="result">0</p>
         </div>
         <div id="buttons">
             <div class="rows">
-                <button class ="row-buttons" id="one">1</button>
-                <button class ="row-buttons" id="two">2</button>
-                <button class ="row-buttons" id="three">3</button>
+                <button onclick = "getValueFromId('one')" class ="row-buttons" id="one">1</button>
+                <button onclick = "getValueFromId('two')" class ="row-buttons" id="two">2</button>
+                <button onclick = "getValueFromId('three')" class ="row-buttons" id="three">3</button>
 
-                <button class ="row-buttons" id="four">4</button>
-                <button class ="row-buttons" id="five">5</button>
-                <button class ="row-buttons" id="six">6</button>
+                <button onclick = "getValueFromId('four')" class ="row-buttons" id="four">4</button>
+                <button onclick = "getValueFromId('five')" class ="row-buttons" id="five">5</button>
+                <button onclick = "getValueFromId('six')" class ="row-buttons" id="six">6</button>
 
-                <button class ="row-buttons" id="seven">7</button>
-                <button class ="row-buttons" id="eight">8</button>
-                <button class ="row-buttons" id="nine">9</button>
+                <button onclick = "getValueFromId('seven')" class ="row-buttons" id="seven">7</button>
+                <button onclick = "getValueFromId('eight')" class ="row-buttons" id="eight">8</button>
+                <button onclick = "getValueFromId('nine')" class ="row-buttons" id="nine">9</button>
 
-                <button class ="row-buttons" id="zero">0</button>
-                <button class ="row-buttons" id="reset">C</button>
-                <button class ="row-buttons" id="equal">=</button>
+                <button onclick = "getValueFromId('zero')" class ="row-buttons" id="zero">0</button>
+                <button onclick = "reset()" class ="row-buttons" id="reset">C</button>
+                <button onclick = "calculate()" class ="row-buttons" id="equal">=</button>
 
             </div>
             <div class="column">
-                <button class="operators" id="add">+</button>
-                <button class="operators" id="minus">-</button>
-                <button class="operators" id="multiply">x</button>
-                <button class="operators" id="divide">÷</button>
+                <button onclick= "getOperator('add')" class="operators" id="add">+</button>
+                <button onclick= "getOperator('minus')" class="operators" id="minus">-</button>
+                <button onclick= "getOperator('multiply')" class="operators" id="multiply">x</button>
+                <button onclick= "getOperator('divide')" class="operators" id="divide">÷</button>
             </div>
         </div>
     </div> 
